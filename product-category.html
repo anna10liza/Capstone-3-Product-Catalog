@@ -179,6 +179,30 @@
         box-shadow: 0 0 15px rgba(37, 226, 204, 0.5);
         margin: 16px 0 20px;
       }
+
+      .floating-home-btn {
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+        width: 58px;
+        height: 58px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--cx-teal), var(--cx-yellow));
+        color: #021F30;
+        font-size: 1.7rem;
+        text-decoration: none;
+        box-shadow: 0 18px 35px rgba(37, 226, 204, 0.3);
+        z-index: 50;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .floating-home-btn:hover {
+        transform: translateY(-3px) scale(1.03);
+        box-shadow: 0 20px 38px rgba(37, 226, 204, 0.45);
+      }
     </style>
   </head>
   <body>
@@ -188,15 +212,6 @@
       </div>
 
       <div class="accent-line"></div>
-
-      <div class="panel">
-        <div class="actions">
-          <a class="nav-link" href="index.html">Home</a>
-          <a class="nav-link" href="product-category.html">Product Category</a>
-          <a class="nav-link" href="capstone-3-task-manager-to-do-app/index.html">Task Manager</a>
-          <a class="nav-link" href="capstone-3-student-record-viewer-and-search-app/index.html">Student Record</a>
-        </div>
-      </div>
 
       <div class="panel">
         <div class="actions">
@@ -219,6 +234,8 @@
         <div class="grid" id="productList"></div>
       </div>
     </div>
+
+    <a class="floating-home-btn" href="index.html" aria-label="Back to main page">⌂</a>
 
     <script>
       const API_URL = window.location.origin;
