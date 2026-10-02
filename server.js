@@ -43,6 +43,22 @@ app.get("/product-category.html", (req, res) => {
   res.sendFile(path.join(__dirname, "product-category.html"));
 });
 
+app.get("/task-manager", (req, res) => {
+  res.sendFile(path.join(__dirname, "task-manager.html"));
+});
+
+app.get("/task-manager.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "task-manager.html"));
+});
+
+app.get("/student-record", (req, res) => {
+  res.sendFile(path.join(__dirname, "student-record.html"));
+});
+
+app.get("/student-record.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "student-record.html"));
+});
+
 app.get("/capstone-3-task-manager-to-do-app", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "capstone-3-task-manager-to-do-app", "index.html"));
 });
