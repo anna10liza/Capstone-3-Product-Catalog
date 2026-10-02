@@ -1,11 +1,9 @@
 {
   "version": 2,
-  "cleanUrls": true,
+  "builds": [
+    { "src": "server.js", "use": "@vercel/node" }
+  ],
   "routes": [
-    { "src": "/product-category(?:\\.html)?/?$", "dest": "/product-category.html" },
-    { "src": "/task-manager(?:\\.html)?/?$", "dest": "/task-manager.html" },
-    { "src": "/student-record(?:\\.html)?/?$", "dest": "/student-record.html" },
-    { "src": "/capstone-3-task-manager-to-do-app(?:/index\\.html)?/?$", "dest": "/capstone-3-task-manager-to-do-app/index.html" },
-    { "src": "/capstone-3-student-record-viewer-and-search-app(?:/index\\.html)?/?$", "dest": "/capstone-3-student-record-viewer-and-search-app/index.html" }
+    { "src": "/(.*)", "dest": "server.js" }
   ]
 }
