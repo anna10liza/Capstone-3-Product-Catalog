@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Record Viewer</title>
+    <link rel="stylesheet" href="capstone-3-student-record-viewer-and-search-app/style.css" />
+  </head>
+  <body>
+    <div class="page-wrap">
+      <header class="header">
+        <div class="header-row">
+          <div>
+            <p class="eyebrow">Academic Records</p>
+            <h1>Student Record Viewer and Search App</h1>
+          </div>
+        </div>
+      </header>
+
+      <section class="dashboard">
+        <div class="stat-box">
+          <span>Total Students</span>
+          <strong id="totalStudents">0</strong>
+        </div>
+        <div class="stat-box accent">
+          <span>Average GPA</span>
+          <strong id="avgGpa">0.00</strong>
+        </div>
+        <div class="stat-box success">
+          <span>Top Course</span>
+          <strong id="topCourse">-</strong>
+        </div>
+      </section>
+
+      <section class="toolbar">
+        <input id="searchInput" type="text" placeholder="Search by name or course..." />
+        <select id="sortSelect">
+          <option value="name">Sort by Name</option>
+          <option value="gpa">Sort by GPA</option>
+          <option value="year">Sort by Year</option>
+        </select>
+      </section>
+
+      <section class="student-grid" id="studentGrid"></section>
+    </div>
+
+    <a class="floating-home-btn" href="index.html" aria-label="Back to main page">⌂</a>
+
+    <script src="capstone-3-student-record-viewer-and-search-app/script.js"></script>
+  </body>
+</html>
