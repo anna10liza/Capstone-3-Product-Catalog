@@ -51,12 +51,28 @@ app.get("/task-manager.html", (req, res) => {
   res.sendFile(path.join(__dirname, "task-manager.html"));
 });
 
+app.get("/task-manager.css", (req, res) => {
+  res.sendFile(path.join(__dirname, "task-manager.css"));
+});
+
+app.get("/task-manager.js", (req, res) => {
+  res.sendFile(path.join(__dirname, "task-manager.js"));
+});
+
 app.get("/student-record", (req, res) => {
   res.sendFile(path.join(__dirname, "student-record.html"));
 });
 
 app.get("/student-record.html", (req, res) => {
   res.sendFile(path.join(__dirname, "student-record.html"));
+});
+
+app.get("/student-record.css", (req, res) => {
+  res.sendFile(path.join(__dirname, "student-record.css"));
+});
+
+app.get("/student-record.js", (req, res) => {
+  res.sendFile(path.join(__dirname, "student-record.js"));
 });
 
 app.get("/capstone-3-task-manager-to-do-app", (req, res) => {
