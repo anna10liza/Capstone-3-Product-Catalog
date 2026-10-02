@@ -2,8 +2,8 @@
   "version": 2,
   "cleanUrls": true,
   "routes": [
-    { "src": "/product-category", "dest": "/product-category.html" },
-    { "src": "/capstone-3-task-manager-to-do-app", "dest": "/capstone-3-task-manager-to-do-app/index.html" },
-    { "src": "/capstone-3-student-record-viewer-and-search-app", "dest": "/capstone-3-student-record-viewer-and-search-app/index.html" }
+    { "src": "/product-category/?$", "dest": "/product-category.html" },
+    { "src": "/capstone-3-task-manager-to-do-app/?$", "dest": "/capstone-3-task-manager-to-do-app/index.html" },
+    { "src": "/capstone-3-student-record-viewer-and-search-app/?$", "dest": "/capstone-3-student-record-viewer-and-search-app/index.html" }
   ]
 }
