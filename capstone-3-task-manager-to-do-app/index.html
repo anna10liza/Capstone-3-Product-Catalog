@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <h1>TaskFlow</h1>
+        <nav class="side-nav">
+          <a class="nav-link" href="../index.html">Home</a>
+          <a class="nav-link" href="../product-category.html">Product Category</a>
+          <a class="nav-link active" href="index.html">Task Manager</a>
+          <a class="nav-link" href="../capstone-3-student-record-viewer-and-search-app/index.html">Student Record</a>
+        </nav>
+        <nav class="filter-nav">
+          <button class="nav-btn active" data-filter="all">All Tasks</button>
+          <button class="nav-btn" data-filter="pending">Pending</button>
+          <button class="nav-btn" data-filter="done">Completed</button>
+        </nav>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Productivity</p>
+            <h2>Task Manager / To-Do App</h2>
+          </div>
+          <div class="stats">
+            <div class="stat-card">
+              <span>Total</span>
+              <strong id="totalTasks">0</strong>
+            </div>
+            <div class="stat-card success">
+              <span>Done</span>
+              <strong id="doneTasks">0</strong>
+            </div>
+          </div>
+        </header>
+
+        <section class="task-form-wrap">
+          <form id="taskForm" class="task-form">
+            <input id="taskInput" type="text" placeholder="Add a new task..." required />
+            <input id="taskDate" type="date" />
+            <button type="submit">Add Task</button>
+          </form>
+        </section>
+
+        <section class="toolbar">
+          <div class="search-box">
+            <input id="searchInput" type="text" placeholder="Search tasks..." />
+          </div>
+          <button id="clearCompleted" class="secondary-btn">Clear Completed</button>
+        </section>
+
+        <section>
+          <ul id="taskList" class="task-list"></ul>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

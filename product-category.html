@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Category</title>
+    <style>
+      :root {
+        --cx-blue: #003D5B;
+        --cx-teal: #25E2CC;
+        --cx-jade: #007380;
+        --cx-yellow: #FBCA18;
+        --cx-orange: #FF8400;
+        --cx-pink: #CC3262;
+        --bg-dark: #021F30;
+        --bg-card: rgba(255, 255, 255, 0.05);
+        --text-primary: #FFFFFF;
+        --text-secondary: rgba(255, 255, 255, 0.75);
+        --border-color: rgba(37, 226, 204, 0.15);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        color: var(--text-primary);
+        background: linear-gradient(135deg, #021F30 0%, #003D5B 40%, #002B40 100%);
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: linear-gradient(rgba(37, 226, 204, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 226, 204, 0.06) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: radial-gradient(circle at 15% 25%, rgba(37, 226, 204, 0.20), transparent 35%), radial-gradient(circle at 85% 75%, rgba(204, 50, 98, 0.18), transparent 35%), radial-gradient(circle at 50% 10%, rgba(251, 202, 24, 0.12), transparent 30%);
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .container {
+        position: relative;
+        z-index: 1;
+        max-width: 1100px;
+        margin: 40px auto;
+        padding: 24px;
+      }
+
+      .panel {
+        position: relative;
+        z-index: 1;
+        background: var(--bg-card);
+        backdrop-filter: blur(12px);
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        padding: 24px;
+        margin-bottom: 24px;
+        box-shadow: 0 0 25px rgba(37, 226, 204, 0.10), 0 0 50px rgba(0, 115, 128, 0.08);
+      }
+
+      h1, h2, h3 {
+        color: white;
+        margin-bottom: 0.5rem;
+      }
+
+      h1 {
+        background: linear-gradient(90deg, var(--cx-teal), var(--cx-yellow));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 18px;
+      }
+
+      .nav-link {
+        display: inline-block;
+        text-decoration: none;
+        background: linear-gradient(135deg, var(--cx-teal), var(--cx-jade));
+        color: #00141F;
+        border-radius: 10px;
+        padding: 12px 20px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .nav-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 0 20px rgba(37, 226, 204, 0.4);
+      }
+
+      button {
+        background: linear-gradient(135deg, var(--cx-teal), var(--cx-jade));
+        color: #00141F;
+        border: none;
+        border-radius: 10px;
+        padding: 12px 24px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 0 20px rgba(37, 226, 204, 0.4);
+      }
+
+      input {
+        padding: 10px 12px;
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+        width: 220px;
+        background: rgba(255,255,255,0.03);
+        color: var(--text-primary);
+      }
+
+      input::placeholder {
+        color: rgba(255,255,255,0.5);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 18px;
+      }
+
+      .product-card {
+        border: 1px solid var(--border-color);
+        border-radius: 14px;
+        padding: 18px;
+        background: rgba(255,255,255,0.04);
+        box-shadow: 0 0 15px rgba(37,226,204,0.08);
+      }
+
+      .product-card h3 {
+        margin: 0 0 10px;
+        font-size: 18px;
+      }
+
+      .product-card p {
+        margin: 6px 0;
+        color: var(--text-secondary);
+      }
+
+      .status {
+        margin-top: 12px;
+        font-weight: 600;
+        color: var(--cx-teal);
+      }
+
+      .accent-line {
+        height: 4px;
+        background: linear-gradient(90deg, var(--cx-teal), var(--cx-yellow), var(--cx-pink));
+        border-radius: 999px;
+        box-shadow: 0 0 15px rgba(37, 226, 204, 0.5);
+        margin: 16px 0 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="topbar">
+        <h1 style="margin: 0; text-align: left;">Product Category</h1>
+      </div>
+
+      <div class="accent-line"></div>
+
+      <div class="panel">
+        <div class="actions">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="product-category.html">Product Category</a>
+          <a class="nav-link" href="capstone-3-task-manager-to-do-app/index.html">Task Manager</a>
+          <a class="nav-link" href="capstone-3-student-record-viewer-and-search-app/index.html">Student Record</a>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="actions">
+          <button id="loadProductsBtn">Load Products</button>
+          <button id="searchBtn">Search by Keyword</button>
+          <input id="keywordInput" type="text" placeholder="Search product" />
+        </div>
+
+        <div class="actions">
+          <input id="nameInput" type="text" placeholder="Product name" />
+          <input id="priceInput" type="number" placeholder="Price" />
+          <input id="categoryInput" type="text" placeholder="Category" />
+          <button id="addProductBtn">Add Product</button>
+        </div>
+
+        <div id="status" class="status">Ready</div>
+      </div>
+
+      <div class="panel">
+        <div class="grid" id="productList"></div>
+      </div>
+    </div>
+
+    <script>
+      const API_URL = window.location.origin;
+      const PRODUCT_STORAGE_KEY = 'mstconnect-product-category';
+      const productList = document.getElementById('productList');
+      const status = document.getElementById('status');
+
+      const fallbackProducts = [
+        { id: 1, name: 'Mechanical Keyboard', price: 2200, category: 'Accessories' },
+        { id: 2, name: 'Wireless Mouse', price: 850, category: 'Accessories' },
+        { id: 3, name: 'Monitor', price: 7000, category: 'Displays' },
+        { id: 4, name: 'USB Hub', price: 350, category: 'Accessories' },
+        { id: 5, name: 'Power Supply', price: 5000, category: 'Accessories' }
+      ];
+
+      let localProducts = JSON.parse(localStorage.getItem(PRODUCT_STORAGE_KEY)) || fallbackProducts;
+
+      function saveProducts(products) {
+        localStorage.setItem(PRODUCT_STORAGE_KEY, JSON.stringify(products));
+        localProducts = products;
+      }
+
+      async function fetchProducts() {
+        try {
+          status.textContent = 'Loading products...';
+          const response = await fetch(`${API_URL}/api/products`, { cache: 'no-store' });
+          if (!response.ok) {
+            throw new Error(`API returned ${response.status}`);
+          }
+          const data = await response.json();
+          const products = Array.isArray(data?.data) ? data.data : Array.isArray(data) ? data : localProducts;
+          saveProducts(products);
+          renderProducts(products);
+          status.textContent = 'Products loaded successfully';
+        } catch (error) {
+          console.warn('Using local fallback products:', error);
+          renderProducts(localProducts);
+          status.textContent = 'Loaded local product catalog';
+        }
+      }
+
+      function renderProducts(products) {
+        productList.innerHTML = '';
+
+        if (!products.length) {
+          productList.innerHTML = '<p>No products found.</p>';
+          return;
+        }
+
+        products.forEach((product) => {
+          const card = document.createElement('div');
+          card.className = 'product-card';
+          card.innerHTML = `
+            <h3>${product.name}</h3>
+            <p><strong>Price:</strong> ₱${product.price}</p>
+            <p><strong>Category:</strong> ${product.category}</p>
+            <p><strong>ID:</strong> ${product.id}</p>
+          `;
+          productList.appendChild(card);
+        });
+      }
+
+      function searchProducts() {
+        const keyword = document.getElementById('keywordInput').value.trim().toLowerCase();
+        const products = keyword
+          ? localProducts.filter((product) => product.name.toLowerCase().includes(keyword) || product.category.toLowerCase().includes(keyword))
+          : localProducts;
+
+        renderProducts(products);
+        status.textContent = keyword ? 'Search complete' : 'Products loaded successfully';
+      }
+
+      function addProduct() {
+        const name = document.getElementById('nameInput').value.trim();
+        const price = document.getElementById('priceInput').value;
+        const category = document.getElementById('categoryInput').value.trim();
+
+        if (!name || !price || !category) {
+          status.textContent = 'Please fill in all product fields';
+          return;
+        }
+
+        const newProduct = {
+          id: Date.now(),
+          name,
+          price: Number(price),
+          category
+        };
+
+        const updatedProducts = [newProduct, ...localProducts];
+        saveProducts(updatedProducts);
+        renderProducts(updatedProducts);
+        document.getElementById('nameInput').value = '';
+        document.getElementById('priceInput').value = '';
+        document.getElementById('categoryInput').value = '';
+        status.textContent = 'Product added successfully';
+      }
+
+      document.getElementById('loadProductsBtn').addEventListener('click', fetchProducts);
+      document.getElementById('searchBtn').addEventListener('click', searchProducts);
+      document.getElementById('addProductBtn').addEventListener('click', addProduct);
+
+      fetchProducts();
+    </script>
+  </body>
+</html>
