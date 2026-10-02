@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Admin User",
+    "email": "admin@mstconnect.com",
+    "password": "$2b$10$xqa4kUWlkXxbs0sRqnQrAOEEHOE2YnuDGJk8GvkT4Xn5LMZDl3cUm",
+    "role": "admin"
+  },
+  {
+    "id": 2,
+    "name": "Test Buyer",
+    "email": "testbuyer@example.com",
+    "password": "$2b$10$XKf7F7rk6sIoZR296uPliuYqmTnRMBw5.sgM/s7IrwpE4QogjBV7.",
+    "role": "customer"
+  }
+]

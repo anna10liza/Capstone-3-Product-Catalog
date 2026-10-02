@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Mechanical Keyboard",
+    "price": 2200,
+    "category": "Accessories"
+  },
+  {
+    "id": 2,
+    "name": "Wireless Mouse",
+    "price": 850,
+    "category": "Accessories"
+  },
+  {
+    "id": 3,
+    "name": "Monitor",
+    "price": 7000,
+    "category": "Displays"
+  },
+  {
+    "id": 4,
+    "name": "USB Hub",
+    "price": 350,
+    "category": "Accessories"
+  },
+  {
+    "id": 5,
+    "name": "Power Supply",
+    "price": 5000,
+    "category": "Accessories"
+  }
+]

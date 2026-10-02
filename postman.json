@@ -1,0 +1,140 @@
+{
+  "info": {
+    "name": "Capstone 3 E-Commerce API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Home",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/"
+      }
+    },
+    {
+      "name": "Get Products",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/api/products"
+      }
+    },
+    {
+      "name": "Get Product by ID",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/api/products/1"
+      }
+    },
+    {
+      "name": "Create Product",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"USB Hub\",\n  \"price\": 350,\n  \"category\": \"Accessories\"\n}"
+        },
+        "url": "http://localhost:3000/api/products"
+      }
+    },
+    {
+      "name": "Register User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Test Buyer\",\n  \"email\": \"testbuyer@example.com\",\n  \"password\": \"pass123\"\n}"
+        },
+        "url": "http://localhost:3000/api/auth/register"
+      }
+    },
+    {
+      "name": "Login User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"admin@mstconnect.com\",\n  \"password\": \"admin123\"\n}"
+        },
+        "url": "http://localhost:3000/api/auth/login"
+      }
+    },
+    {
+      "name": "Get Current User",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <token_here>"
+          }
+        ],
+        "url": "http://localhost:3000/api/auth/me"
+      }
+    },
+    {
+      "name": "Create Order",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer <token_here>"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"items\": [\n    {\n      \"productId\": 1,\n      \"quantity\": 1\n    },\n    {\n      \"productId\": 2,\n      \"quantity\": 2\n    }\n  ]\n}"
+        },
+        "url": "http://localhost:3000/api/orders"
+      }
+    },
+    {
+      "name": "Get My Orders",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <token_here>"
+          }
+        ],
+        "url": "http://localhost:3000/api/orders/me"
+      }
+    },
+    {
+      "name": "Get All Orders (Admin)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <token_here>"
+          }
+        ],
+        "url": "http://localhost:3000/api/orders/all"
+      }
+    }
+  ]
+}
